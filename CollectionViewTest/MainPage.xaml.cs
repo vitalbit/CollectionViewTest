@@ -27,11 +27,14 @@ public partial class MainPage : ContentPage
     {
         base.OnAppearing();
 
-        _ = Task.Run(() =>
+        _ = Task.Delay(2000).ContinueWith((_) =>
         {
             for (int i = 0; i < 1000; i++)
             {
-                Items.ToDisplay.Add("Test item " + i.ToString());
+                Items.ToDisplay.Add(new DisplayItem
+                {
+                    Name = "Test item " + i.ToString()
+                });
             }
         });
     }

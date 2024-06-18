@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:main="clr-namespace:CollectionViewTest"
              x:Class="CollectionViewTest.MainPage"
              x:Name="This">
 
     <CollectionView ItemsSource="{Binding Items.ToDisplay}"
                     BindingContext="{Binding Source={Reference This}}">
         <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Label Text="{Binding .}"/>
+            <DataTemplate x:DataType="main:DisplayItem">
+                <Label Text="{Binding Name}"/>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

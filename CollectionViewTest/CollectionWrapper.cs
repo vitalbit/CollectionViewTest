@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 namespace CollectionViewTest;
 public class CollectionWrapper : INotifyPropertyChanged
 {
-    private ObservableCollection<string> _toDisplay = [];
+    private ObservableCollection<DisplayItem> _toDisplay = [];
 
-    public ObservableCollection<string> ToDisplay
+    public ObservableCollection<DisplayItem> ToDisplay
     {
         get { return _toDisplay; }
         set 
